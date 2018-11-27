@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: monitoring
+  cloud:
+    config:
+      uri: http://config:8888
+      fail-fast: true

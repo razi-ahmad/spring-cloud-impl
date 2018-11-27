@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: gateway
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    config:
+      uri: http://config:8888
+      fail-fast: true
