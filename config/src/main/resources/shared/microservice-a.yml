@@ -1,0 +1,6 @@
+server:
+  port: 6000
+
+feign:
+  hystrix:
+    enabled: true

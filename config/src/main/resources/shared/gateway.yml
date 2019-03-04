@@ -4,17 +4,28 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 20000
+            timeoutInMilliseconds: 41000
 
 ribbon:
-  ReadTimeout: 20000
-  ConnectTimeout: 20000
+  ReadTimeout: 30000
+  ConnectTimeout: 30000
 
 zuul:
   ignoredServices: '*'
   host:
-    connect-timeout-millis: 20000
-    socket-timeout-millis: 20000
+    connect-timeout-millis: 80000
+    socket-timeout-millis: 80000
+  routes:
+    microservice-a:
+      path: /service-a/**
+      serviceid: microservice-a
+      stripPrefix: false
+      sensitiveHeaders:
 
+    microservice-b:
+      path: /service-b/**
+      serviceId: microservice-b
+      stripPrefix: false
+      sensitiveHeaders:
 server:
   port: 4000
